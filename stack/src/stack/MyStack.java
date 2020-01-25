@@ -2,12 +2,12 @@ package stack;
 
 import interfaces.StackInterface;
 
-public class Stack<T> implements StackInterface<T> {
+public class MyStack<T> implements StackInterface<T> {
     private T[] stack;
     private int size;
     private int stackPointer;
 
-    public Stack(){
+    public MyStack(){
         stackPointer=-1;
     }
 
