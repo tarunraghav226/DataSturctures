@@ -2,29 +2,32 @@ package stack;
 
 import interfaces.StackInterface;
 
+import java.lang.reflect.Array;
+
 public class MyStack<T> implements StackInterface<T> {
     private T[] stack;
     private int size;
     private int stackPointer;
 
-    public MyStack(){
-        stackPointer=-1;
+    @SuppressWarnings("unchecked")
+    public MyStack(Class<T> tClass, int size) {
+        stackPointer = -1;
+        this.size = size;
+        stack = (T[]) Array.newInstance(tClass, size);
     }
 
-    public void setSize(int size){this.size=size;}
-
-    public T[] getStack(){
+    public T[] getStack() {
         return stack;
     }
 
     @Override
-    public void push(T obj){
-        if(isEmptySpaceAvailable()){
-            stackPointer+=1;
-            stack[stackPointer]=obj;
-            return;
+    public int push(T obj) {
+        if (isEmptySpaceAvailable()) {
+            stackPointer += 1;
+            stack[stackPointer] = obj;
+            return 0;
         }
-        System.out.println("!!!Stack Overflow!!!");
+        return -1;
     }
 
     @Override
