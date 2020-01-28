@@ -1,20 +1,22 @@
 package interfaces;
 
-public interface LinkedListInterface<T> {
+import student.Student;
+
+public interface LinkedListInterface {
 
     /**
      * Inserts an object in linked list.
      *
      * @param obj The object which is to inserted in linked list.
      */
-    void insertion(T obj);
+    void insertion(Student obj);
 
     /**
      * Removes the given object from the linked list.
      *
      * @param obj The object which is to be removed from the linked list.
      */
-    void deletion(T obj);
+    void deletion(Student obj);
 
     /**
      * Searches the object in linked list.
@@ -22,7 +24,7 @@ public interface LinkedListInterface<T> {
      * @param uniqueNumber It is the unique number by which object will be identified.
      * @return Returns the searched object.
      */
-    T getObject(int uniqueNumber);
+    Student getObject(int uniqueNumber);
 
     /**
      * It updates the object of linked list.
