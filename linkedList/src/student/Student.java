@@ -1,5 +1,7 @@
 package student;
 
+import java.util.Scanner;
+
 public class Student {
     private String name;
     private int rollNo;
@@ -7,43 +9,67 @@ public class Student {
     private String section;
     private String course;
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
-    public int getRollNo() {
+    private int getRollNo() {
         return rollNo;
     }
 
-    public void setRollNo(int rollNo) {
+    private void setRollNo(int rollNo) {
         this.rollNo = rollNo;
     }
 
-    public int getLibraryCode() {
+    private int getLibraryCode() {
         return libraryCode;
     }
 
-    public void setLibraryCode(int libraryCode) {
+    private void setLibraryCode(int libraryCode) {
         this.libraryCode = libraryCode;
     }
 
-    public String getSection() {
+    private String getSection() {
         return section;
     }
 
-    public void setSection(String section) {
+    private void setSection(String section) {
         this.section = section;
     }
 
-    public String getCourse() {
+    private String getCourse() {
         return course;
     }
 
-    public void setCourse(String course) {
+    private void setCourse(String course) {
         this.course = course;
+    }
+
+    public void setStudent() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the name of student --> ");
+        this.setName(scan.next().trim());
+        System.out.println("Enter the roll number of student --> ");
+        this.setRollNo(scan.nextInt());
+        System.out.println("Enter the library code of student --> ");
+        this.setLibraryCode(scan.nextInt());
+        System.out.println("Enter section of student --> ");
+        scan.next();
+        this.setSection(scan.next().trim());
+        System.out.println("Enter course of student --> ");
+        this.setCourse(scan.next().trim());
+    }
+
+    @Override
+    public String toString() {
+        return "Student name --> " + this.getName() + "\n" +
+                "Student roll number --> " + this.getRollNo() + "\n" +
+                "Student library code --> " + this.getLibraryCode() + "\n" +
+                "Student section --> " + this.getSection() + "\n" +
+                "Student course --> " + this.getCourse() + "\n";
     }
 }
