@@ -6,19 +6,30 @@ public class MyNode {
     Student student;
     MyNode next;
 
-    public Student getStudent() {
+    private Student getStudent() {
         return student;
     }
 
-    public void setStudent(Student student) {
+    private void setStudent(Student student) {
         this.student = student;
     }
 
-    public MyNode getNext() {
+    private MyNode getNext() {
         return next;
     }
 
-    public void setNext(MyNode next) {
+    private void setNext(MyNode next) {
         this.next = next;
+    }
+
+    public void setNode(Student student, MyNode nextNode) {
+        this.setStudent(student);
+        this.setNext(nextNode);
+    }
+
+    @Override
+    public String toString() {
+        return this.student.toString() + "\n" +
+                "Next Reference --> " + this.getNext();
     }
 }
