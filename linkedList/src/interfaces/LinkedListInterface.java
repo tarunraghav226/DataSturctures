@@ -1,6 +1,6 @@
 package interfaces;
 
-import student.Student;
+import node.MyNode;
 
 public interface LinkedListInterface {
 
@@ -9,14 +9,14 @@ public interface LinkedListInterface {
      *
      * @param obj The object which is to inserted in linked list.
      */
-    void insertion(Student obj);
+    void insertion(MyNode obj);
 
     /**
      * Removes the given object from the linked list.
      *
      * @param obj The object which is to be removed from the linked list.
      */
-    void deletion(Student obj);
+    void deletion(MyNode obj);
 
     /**
      * Searches the object in linked list.
@@ -24,7 +24,7 @@ public interface LinkedListInterface {
      * @param uniqueNumber It is the unique number by which object will be identified.
      * @return Returns the searched object.
      */
-    Student getObject(int uniqueNumber);
+    MyNode getObject(int uniqueNumber);
 
     /**
      * It updates the object of linked list.
