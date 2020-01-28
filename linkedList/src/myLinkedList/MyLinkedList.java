@@ -7,9 +7,10 @@ public class MyLinkedList implements LinkedListInterface {
     private MyNode node;
     private MyNode head = null;
     private MyNode tail = null;
+    private MyNode iterator;
 
     public MyNode getNode() {
-        return node;
+        return null;
     }
 
     public void setNode(MyNode node) {
@@ -17,7 +18,14 @@ public class MyLinkedList implements LinkedListInterface {
     }
 
     private MyNode getHead() {
-        return head;
+        if (iterator == null) {
+            iterator = head;
+            return head;
+        } else {
+            MyNode temp = iterator;
+            iterator.setNext(iterator.getNext());
+            return temp;
+        }
     }
 
     private void setHead(MyNode head) {
