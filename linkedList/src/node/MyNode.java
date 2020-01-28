@@ -14,11 +14,11 @@ public class MyNode {
         this.student = student;
     }
 
-    private MyNode getNext() {
+    public MyNode getNext() {
         return next;
     }
 
-    private void setNext(MyNode next) {
+    public void setNext(MyNode next) {
         this.next = next;
     }
 
