@@ -13,9 +13,9 @@ public interface PrimitiveInterface {
     /**
      * Removes the given object from the linked list.
      *
-     * @param obj The object which is to be removed from the linked list.
+     * @param data The data which is to be removed from the linked list.
      */
-    void deletion(PrimitiveNode obj);
+    void deletion(int data);
 
     /**
      * Searches the object in linked list.
