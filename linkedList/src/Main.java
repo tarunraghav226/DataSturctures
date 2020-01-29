@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int oldData, newData;
+        int oldData, newData, position;
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter number of nodes --> ");
         int numberOfNodes = scan.nextInt();
@@ -40,6 +40,15 @@ public class Main {
 
         System.out.println("Displaying Updated list ---> ");
         for (int i = 0; i < numberOfNodes; i++) {
+            System.out.println(linkedList.getNode());
+        }
+
+        System.out.print("Enter position of node to be deleted --> ");
+        position = scan.nextInt();
+        linkedList.deletion(position);
+
+        System.out.println("Displaying Updated list ---> ");
+        for (int i = 0; i < linkedList.getNumberOfNodes(); i++) {
             System.out.println(linkedList.getNode());
         }
     }

@@ -13,6 +13,10 @@ public class MyLinkedList implements PrimitiveInterface {
         iterator = new PrimitiveNode();
     }
 
+    public int getNumberOfNodes() {
+        return this.numberOfNodes;
+    }
+
     private PrimitiveNode getHead() {
         return this.head;
     }
@@ -45,14 +49,21 @@ public class MyLinkedList implements PrimitiveInterface {
     }
 
     @Override
-    public void deletion(PrimitiveNode obj) {
+    public void deletion(int position) {
+        iterator = new PrimitiveNode();
+        PrimitiveNode temp = new PrimitiveNode();
 
+        if (getHead() != null && position == 1) {
+            setHead(getHead().getNext());
+            numberOfNodes--;
+        }
+        iterator = new PrimitiveNode();
     }
 
     @Override
     public PrimitiveNode getObject(int uniqueNumber) {
         PrimitiveNode object = new PrimitiveNode();
-        for (int i = 0; i < this.numberOfNodes + 1; i++) {
+        for (int i = 0; i < this.numberOfNodes; i++) {
             PrimitiveNode temp = getNode();
             if (temp.getData() == uniqueNumber) {
                 object = temp;
