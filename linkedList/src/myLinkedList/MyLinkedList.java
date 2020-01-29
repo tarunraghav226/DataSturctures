@@ -56,7 +56,20 @@ public class MyLinkedList implements PrimitiveInterface {
         if (getHead() != null && position == 1) {
             setHead(getHead().getNext());
             numberOfNodes--;
+        } else if (position == numberOfNodes) {
+            for (int i = 0; i < numberOfNodes - 1; i++) {
+                temp = getNode();
+            }
+            temp.setNext(null);
+            numberOfNodes--;
+        } else {
+            for (int i = 0; i < position - 1; i++) {
+                temp = getNode();
+            }
+            temp.setNext(temp.getNext().getNext());
+            numberOfNodes--;
         }
+
         iterator = new PrimitiveNode();
     }
 
