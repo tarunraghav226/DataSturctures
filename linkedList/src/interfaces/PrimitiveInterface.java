@@ -1,0 +1,39 @@
+package interfaces;
+
+import node.PrimitiveNode;
+
+public interface PrimitiveInterface {
+    /**
+     * Inserts an object in linked list.
+     *
+     * @param obj The object which is to inserted in linked list.
+     */
+    void insertion(PrimitiveNode obj);
+
+    /**
+     * Removes the given object from the linked list.
+     *
+     * @param obj The object which is to be removed from the linked list.
+     */
+    void deletion(PrimitiveNode obj);
+
+    /**
+     * Searches the object in linked list.
+     *
+     * @param uniqueNumber It is the unique number by which object will be identified.
+     * @return Returns the searched object.
+     */
+    PrimitiveNode getObject(int uniqueNumber);
+
+    /**
+     * It updates the object of linked list.
+     *
+     * @param uniqueNumber It is the unique number by which object will be identified.
+     */
+    void update(int uniqueNumber);
+
+    /**
+     * It sorts the linked list.
+     */
+    void sort();
+}

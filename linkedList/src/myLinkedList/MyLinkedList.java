@@ -1,67 +1,54 @@
 package myLinkedList;
 
-import interfaces.LinkedListInterface;
-import node.MyNode;
+import interfaces.PrimitiveInterface;
+import node.PrimitiveNode;
 
-public class MyLinkedList implements LinkedListInterface {
-    private MyNode node;
-    private MyNode head = null;
-    private MyNode tail = null;
-    private MyNode iterator;
+public class MyLinkedList implements PrimitiveInterface {
+    private PrimitiveNode head = null;
+    private PrimitiveNode iterator = null;
 
-    public MyNode getNode() {
-        return null;
+    public MyLinkedList() {
+        iterator = new PrimitiveNode();
     }
 
-    public void setNode(MyNode node) {
-        this.node = node;
+    private PrimitiveNode getHead() {
+        return this.head;
     }
 
-    private MyNode getHead() {
-        if (iterator == null) {
-            iterator = head;
-            return head;
+    private void setHead(PrimitiveNode headNode) {
+        this.head = headNode;
+    }
+
+    public PrimitiveNode getNode() {
+        if (iterator.getNext() == null) {
+            iterator.setNode(getHead().getData(), getHead().getNext());
+            return iterator;
         } else {
-            MyNode temp = iterator;
-            iterator.setNext(iterator.getNext());
-            return temp;
+            iterator = iterator.getNext();
+            return iterator;
         }
     }
 
-    private void setHead(MyNode head) {
-        this.head = head;
-    }
-
-    private MyNode getTail() {
-        return tail;
-    }
-
-    private void setTail(MyNode tail) {
-        this.tail = tail;
-    }
-
     @Override
-    public void insertion(MyNode obj) {
-        if (this.getHead().getNext() == null) {
+    public void insertion(PrimitiveNode obj) {
+        if (this.getHead() == null) {
             this.setHead(obj);
-            this.setTail(obj);
         } else {
-            MyNode temp = head;
+            PrimitiveNode temp = this.getHead();
             while (temp.getNext() != null) {
                 temp = temp.getNext();
             }
             temp.setNext(obj);
-            this.setTail(obj);
         }
     }
 
     @Override
-    public void deletion(MyNode obj) {
+    public void deletion(PrimitiveNode obj) {
 
     }
 
     @Override
-    public MyNode getObject(int uniqueNumber) {
+    public PrimitiveNode getObject(int uniqueNumber) {
         return null;
     }
 

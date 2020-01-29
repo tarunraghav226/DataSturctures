@@ -4,6 +4,10 @@ public class PrimitiveNode {
     int data;
     PrimitiveNode next;
 
+    public PrimitiveNode() {
+        next = null;
+    }
+
     public int getData() {
         return data;
     }
@@ -20,9 +24,13 @@ public class PrimitiveNode {
         this.next = next;
     }
 
+    public void setNode(int data, PrimitiveNode nextNode) {
+        this.data = data;
+        this.next = nextNode;
+    }
+
     @Override
     public String toString() {
-        return "Data --> " + getData() + "\n" +
-                "Next Reference --> " + getNext().hashCode();
+        return "Data --> " + getData() + "\n";
     }
 }
