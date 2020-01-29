@@ -65,8 +65,9 @@ public class MyLinkedList implements PrimitiveInterface {
     }
 
     @Override
-    public void update(int uniqueNumber) {
-
+    public void update(int uniqueNumber, int newData) {
+        PrimitiveNode object = this.getObject(uniqueNumber);
+        object.setData(newData);
     }
 
     @Override
