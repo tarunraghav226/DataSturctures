@@ -6,8 +6,10 @@ import node.PrimitiveNode;
 public class MyLinkedList implements PrimitiveInterface {
     private PrimitiveNode head = null;
     private PrimitiveNode iterator = null;
+    private int numberOfNodes;
 
-    public MyLinkedList() {
+    public MyLinkedList(int numberOfNodes) {
+        this.numberOfNodes = numberOfNodes;
         iterator = new PrimitiveNode();
     }
 
@@ -21,12 +23,12 @@ public class MyLinkedList implements PrimitiveInterface {
 
     public PrimitiveNode getNode() {
         if (iterator.getNext() == null) {
-            iterator.setNode(getHead().getData(), getHead().getNext());
-            return iterator;
+            iterator = new PrimitiveNode();
+            iterator = getHead();
         } else {
             iterator = iterator.getNext();
-            return iterator;
         }
+        return iterator;
     }
 
     @Override
@@ -49,7 +51,17 @@ public class MyLinkedList implements PrimitiveInterface {
 
     @Override
     public PrimitiveNode getObject(int uniqueNumber) {
-        return null;
+        PrimitiveNode object = new PrimitiveNode();
+        for (int i = 0; i < this.numberOfNodes + 1; i++) {
+            PrimitiveNode temp = getNode();
+            if (temp.getData() == uniqueNumber) {
+                object = temp;
+                break;
+            } else {
+                object = null;
+            }
+        }
+        return object;
     }
 
     @Override

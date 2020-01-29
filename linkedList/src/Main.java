@@ -10,7 +10,7 @@ public class Main {
         int numberOfNodes = scan.nextInt();
 
         //Linked List declaration
-        MyLinkedList linkedList = new MyLinkedList();
+        MyLinkedList linkedList = new MyLinkedList(numberOfNodes);
 
         //Node declaration
         PrimitiveNode node = new PrimitiveNode();
@@ -25,5 +25,9 @@ public class Main {
         for (int i = 0; i < numberOfNodes; i++) {
             System.out.println(linkedList.getNode());
         }
+
+        System.out.println("Enter data to be searched --> ");
+        int dataToBeSearched = scan.nextInt();
+        System.out.println(linkedList.getObject(dataToBeSearched));
     }
 }
