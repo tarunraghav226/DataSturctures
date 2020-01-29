@@ -29,8 +29,9 @@ public interface PrimitiveInterface {
      * It updates the object of linked list.
      *
      * @param uniqueNumber It is the unique number by which object will be identified.
+     * @param newData      It is the new data which is to saved in object.
      */
-    void update(int uniqueNumber);
+    void update(int uniqueNumber, int newData);
 
     /**
      * It sorts the linked list.
