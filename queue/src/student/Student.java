@@ -23,8 +23,8 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
-                ", cpi=" + cpi +
+                "name='" + getName() + '\'' +
+                ", cpi=" + getCpi() +
                 '}';
     }
 }
