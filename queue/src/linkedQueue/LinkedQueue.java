@@ -23,5 +23,33 @@ public class LinkedQueue {
         this.beginning = beginning;
     }
 
+    public void enQueue(Node node) {
+        if (top == null && beginning == null) {
+            top = node;
+            beginning = node;
+        } else {
+            top.setNext(node);
+            top = top.getNext();
+        }
+    }
 
+    public Node deQueue() {
+        if (top == null && beginning == null) {
+            return null;
+        }
+        if (top == beginning) {
+            Node temp = beginning;
+            beginning = null;
+            top = null;
+            return temp;
+        } else {
+            Node temp = beginning;
+            beginning = beginning.getNext();
+            return temp;
+        }
+    }
+
+    public Node peekInQueue() {
+        return beginning;
+    }
 }
