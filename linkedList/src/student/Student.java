@@ -51,16 +51,15 @@ public class Student {
 
     public void setStudent() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the name of student --> ");
+        System.out.print("Enter the name of student --> ");
         this.setName(scan.next().trim());
-        System.out.println("Enter the roll number of student --> ");
+        System.out.print("Enter the roll number of student --> ");
         this.setRollNo(scan.nextInt());
-        System.out.println("Enter the library code of student --> ");
+        System.out.print("Enter the library code of student --> ");
         this.setLibraryCode(scan.nextInt());
-        System.out.println("Enter section of student --> ");
-        scan.next();
+        System.out.print("Enter section of student --> ");
         this.setSection(scan.next().trim());
-        System.out.println("Enter course of student --> ");
+        System.out.print("Enter course of student --> ");
         this.setCourse(scan.next().trim());
     }
 
