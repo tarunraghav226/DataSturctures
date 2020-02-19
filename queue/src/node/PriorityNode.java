@@ -33,6 +33,6 @@ public class PriorityNode {
 
     @Override
     public String toString() {
-        return getStudent() + " " + getPriority() + " " + getNext();
+        return getStudent() + " " + getPriority();
     }
 }
