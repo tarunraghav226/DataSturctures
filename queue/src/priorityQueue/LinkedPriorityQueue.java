@@ -46,4 +46,8 @@ public class LinkedPriorityQueue {
         }
         return temp;
     }
+
+    public PriorityNode peek() {
+        return getFront();
+    }
 }

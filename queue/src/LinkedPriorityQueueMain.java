@@ -34,6 +34,7 @@ public class LinkedPriorityQueueMain {
                     System.out.println("Deleted node -- " + priorityNode);
                     break;
                 case '3':
+                    System.out.println(linkedPriorityQueue.peek());
                     break;
                 case '4':
                     flag = false;
