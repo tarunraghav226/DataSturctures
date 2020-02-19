@@ -30,4 +30,9 @@ public class PriorityNode {
     public void setNext(PriorityNode next) {
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        return getStudent() + " " + getPriority() + " " + getNext();
+    }
 }
