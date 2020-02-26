@@ -30,4 +30,11 @@ public class DoublyLinkedNode {
     public void setNext(DoublyLinkedNode next) {
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        return "DoublyLinkedNode{" +
+                "student=" + student +
+                '}';
+    }
 }
