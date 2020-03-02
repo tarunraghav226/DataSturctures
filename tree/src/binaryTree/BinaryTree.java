@@ -1,6 +1,7 @@
 package binaryTree;
 
 import node.TreeNode;
+import queue.Queue;
 import student.Student;
 
 public class BinaryTree {
@@ -45,6 +46,28 @@ public class BinaryTree {
     }
 
     public void insert(Student student) {
-
+        TreeNode node = new TreeNode();
+        Queue queue = new Queue();
+        node.setStudent(student);
+        if (getRoot() == null) {
+            setRoot(node);
+        } else {
+            queue.enQueue(root);
+            while (true) {
+                TreeNode temp = queue.deQueue();
+                if (temp.getLeftNode() != null) {
+                    queue.enQueue(temp.getLeftNode());
+                } else {
+                    temp.setLeftNode(node);
+                    break;
+                }
+                if (temp.getRightNode() != null) {
+                    queue.enQueue(temp.getRightNode());
+                } else {
+                    temp.setRightNode(node);
+                    break;
+                }
+            }
+        }
     }
 }
