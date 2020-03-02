@@ -1,17 +1,16 @@
 package node;
 
-import student.Student;
 
 public class Node {
-    private Student student;
+    private TreeNode treeNode;
     private Node next;
 
-    public Student getStudent() {
-        return student;
+    public TreeNode getTreeNode() {
+        return treeNode;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setTreeNode(TreeNode node) {
+        this.treeNode = node;
     }
 
     public Node getNext() {
@@ -25,7 +24,7 @@ public class Node {
     @Override
     public String toString() {
         return "Node{" +
-                "student=" + student +
+                "treeNode=" + treeNode +
                 '}';
     }
 }

@@ -1,7 +1,7 @@
 package queue;
 
 import node.Node;
-import student.Student;
+import node.TreeNode;
 
 public class Queue {
 
@@ -24,26 +24,30 @@ public class Queue {
         this.rear = rear;
     }
 
-    public void enQueue(Student student) {
+    public void enQueue(TreeNode treeNode) {
         Node node = new Node();
-        node.setStudent(student);
+        node.setTreeNode(treeNode);
         if (front == null && rear == null) {
             front = node;
             rear = node;
         } else {
             rear.setNext(node);
-            rear = node;
+            rear = rear.getNext();
         }
     }
 
-    public Student deQueue() {
-        Student student = new Student();
+    public TreeNode deQueue() {
+        TreeNode treeNode = new TreeNode();
         if (front == null && rear == null)
             System.out.println("Underflow");
-        else {
-            student = front.getStudent();
+        else if (front == rear) {
+            treeNode = front.getTreeNode();
+            front = null;
+            rear = null;
+        } else {
+            treeNode = front.getTreeNode();
             front = front.getNext();
         }
-        return student;
+        return treeNode;
     }
 }
