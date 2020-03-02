@@ -1,6 +1,7 @@
 package binaryTree;
 
 import node.TreeNode;
+import student.Student;
 
 public class BinaryTree {
     private TreeNode root;
@@ -41,5 +42,9 @@ public class BinaryTree {
             LRD(node.getRightNode());
             System.out.println(node);
         }
+    }
+
+    public void insert(Student student) {
+
     }
 }
