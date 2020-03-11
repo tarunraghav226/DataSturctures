@@ -34,4 +34,35 @@ public class BinarySearchTree {
         }
         return student;
     }
+
+    public void insert(Student student) {
+        TreeNode node = new TreeNode();
+        node.setStudent(student);
+
+        if (getRoot() == null)
+            setRoot(node);
+        else {
+            TreeNode current = getRoot();
+            TreeNode parent = getRoot();
+            boolean isLeft = false;
+
+            while (current != null) {
+                if (Float.compare(student.getCpi(), current.getStudent().getCpi()) > 0) {
+                    isLeft = false;
+                    parent = current;
+                    current = current.getRightNode();
+                } else {
+                    isLeft = true;
+                    parent = current;
+                    current = current.getLeftNode();
+                }
+            }
+
+            if (isLeft) {
+                parent.setLeftNode(node);
+            } else {
+                parent.setRightNode(node);
+            }
+        }
+    }
 }
