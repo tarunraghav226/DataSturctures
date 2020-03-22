@@ -65,4 +65,12 @@ public class BinarySearchTree {
             }
         }
     }
+
+    public void show(TreeNode node) {
+        if (node == null)
+            return;
+        System.out.println(node.getStudent());
+        show(node.getLeftNode());
+        show(node.getRightNode());
+    }
 }
