@@ -73,4 +73,26 @@ public class BinarySearchTree {
         show(node.getLeftNode());
         show(node.getRightNode());
     }
+
+    public Student minimumCPI() {
+        TreeNode temp = getRoot();
+
+        if (temp == null)
+            return null;
+
+        while (temp.getLeftNode() != null)
+            temp = temp.getLeftNode();
+        return temp.getStudent();
+    }
+
+    public Student maximumCPI() {
+        TreeNode temp = getRoot();
+        if (temp == null)
+            return null;
+
+        while (temp.getRightNode() != null)
+            temp = temp.getRightNode();
+
+        return temp.getStudent();
+    }
 }
