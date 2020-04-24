@@ -95,4 +95,84 @@ public class BinarySearchTree {
 
         return temp.getStudent();
     }
+
+    public boolean delete(float cpi) {
+        TreeNode parent = getRoot();
+        TreeNode current = getRoot();
+        boolean isLeft = true;
+
+        if (getRoot() == null) {
+            System.out.println("No tree");
+            return false;
+        }
+
+        while (Float.compare(current.getStudent().getCpi(), cpi) != 0) {
+            parent = current;
+            if (Float.compare(current.getStudent().getCpi(), cpi) > 0) {
+                isLeft = true;
+                current = current.getLeftNode();
+            } else {
+                isLeft = false;
+                current = current.getRightNode();
+            }
+            if (current == null)
+                return false;
+        }
+
+        if (current.getLeftNode() == null && current.getRightNode() == null) {
+            if (current == getRoot()) {
+                setRoot(null);
+            } else if (isLeft) {
+                parent.setLeftNode(null);
+            } else {
+                parent.setRightNode(null);
+            }
+        } else if (current.getRightNode() == null) {
+            if (current == getRoot()) {
+                setRoot(current.getLeftNode());
+            } else if (isLeft) {
+                parent.setLeftNode(current.getLeftNode());
+            } else {
+                parent.setRightNode(current.getLeftNode());
+            }
+        } else if (current.getLeftNode() == null) {
+            if (current == getRoot()) {
+                setRoot(current.getRightNode());
+            } else if (isLeft) {
+                parent.setLeftNode(current.getRightNode());
+            } else {
+                parent.setRightNode(current.getRightNode());
+            }
+        } else {
+            TreeNode successor = getSuccessor(current);
+            if (current == getRoot()) {
+                setRoot(successor);
+            } else if (isLeft) {
+                parent.setLeftNode(successor);
+            } else {
+                parent.setRightNode(successor);
+            }
+            successor.setLeftNode(current.getLeftNode());
+        }
+        return true;
+    }
+
+    private TreeNode getSuccessor(TreeNode delNode) {
+        TreeNode successorParent = delNode;
+        TreeNode successor = delNode;
+        TreeNode current = delNode.getRightNode();
+
+        while (current != null) {
+            successorParent = successor;
+            successor = current;
+            current = current.getLeftNode();
+        }
+
+        if (successor != delNode.getRightNode()) {
+            successorParent.setLeftNode(successor.getRightNode());
+            successor.setRightNode(delNode.getRightNode());
+        }
+
+        return successor;
+    }
 }
