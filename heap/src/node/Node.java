@@ -12,6 +12,10 @@ public class Node {
         this.key = key;
     }
 
+    public Node(int key) {
+        this.key = key;
+    }
+
     public Node getNext() {
         return next;
     }
