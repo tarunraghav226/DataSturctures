@@ -14,6 +14,6 @@ public class Main {
         graph.addEdge(3, 2);
         graph.addEdge(4, 2);
 
-        graph.DFSSearch();
+        graph.BFSearch();
     }
 }
