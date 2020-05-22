@@ -13,7 +13,11 @@ public class Main {
         graph.addEdge(2, 1);
         graph.addEdge(3, 2);
         graph.addEdge(4, 2);
+        graph.addEdge(0, 4);
+        graph.addEdge(0, 1);
+        graph.addEdge(3, 4);
+        graph.addEdge(0, 3);
 
-        graph.BFSearch();
+        graph.mst();
     }
 }
