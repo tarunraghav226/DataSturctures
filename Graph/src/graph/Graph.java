@@ -84,4 +84,25 @@ public class Graph {
             vertexList[i].isVisited = false;
         }
     }
+
+    public void mst() {
+        vertexList[0].isVisited = true;
+        stack.push(0);
+        while (!stack.isEmpty()) {
+            int currentVertex = stack.peek();
+            int v = getUnvisitedVertex(currentVertex);
+            if (v == -1) {
+                stack.pop();
+            } else {
+                vertexList[v].isVisited = true;
+                displayVertex(currentVertex);
+                displayVertex(v);
+                System.out.println("-----------------");
+                stack.push(v);
+            }
+        }
+        for (int i = 0; i < numberOfVertex; i++) {
+            vertexList[i].isVisited = true;
+        }
+    }
 }
