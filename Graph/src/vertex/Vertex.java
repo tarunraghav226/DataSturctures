@@ -2,7 +2,7 @@ package vertex;
 
 public class Vertex {
     public char label;
-    public boolean isVisited;
+    public boolean isVisited; // isInTree in case of weighted graph
 
     public Vertex(char label) {
         this.label = label;
@@ -11,6 +11,6 @@ public class Vertex {
 
     @Override
     public String toString() {
-        return "Label --> " + this.label + "Visited --> " + this.isVisited;
+        return "Label --> " + this.label;
     }
 }
