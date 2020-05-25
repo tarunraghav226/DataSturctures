@@ -17,7 +17,7 @@ public class PriorityQ {
         for (j = 0; j < size; j++)
             if (item.distance >= arr[j].distance)
                 break;
-        for (int k = j; k < size - 1; k++)
+        for (int k = size - 1; k >= j; k--)
             arr[k + 1] = arr[k];
         arr[j] = item;
         size++;
@@ -28,7 +28,7 @@ public class PriorityQ {
     }
 
     public void removeN(int n) {
-        for (int i = n; i < size + 1; i++)
+        for (int i = n; i < size - 1; i++)
             arr[i] = arr[i + 1];
         size--;
     }
